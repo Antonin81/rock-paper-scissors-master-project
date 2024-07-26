@@ -1,32 +1,12 @@
 import ActionButton from "./ActionButton";
 
-function GameBoard({ isBonusMode, playGame }) {
-  const basicButtons = [
-    {
-      action: "scissors",
-      img: "/img/icon-scissors.svg",
-    },
-    {
-      action: "paper",
-      img: "/img/icon-paper.svg",
-    },
-    {
-      action: "rock",
-      img: "/img/icon-rock.svg",
-    },
-  ];
-
-  const bonusButtons = [
-    {
-      action: "lizard",
-      img: "/img/icon-lizard.svg",
-    },
-    {
-      action: "spock",
-      img: "/img/icon-spock.svg",
-    },
-  ];
-
+function GameBoard({
+  isBonusMode,
+  playGame,
+  setPlayerButton,
+  basicButtons,
+  bonusButtons,
+}) {
   return (
     <div className={"gameboard" + (isBonusMode ? " bonus-gameboard" : "")}>
       <img
@@ -41,6 +21,7 @@ function GameBoard({ isBonusMode, playGame }) {
             isBonusMode={isBonusMode}
             playGame={playGame}
             key={button.action}
+            setPlayerButton={setPlayerButton}
           />
         ))}
         {isBonusMode &&
@@ -50,6 +31,7 @@ function GameBoard({ isBonusMode, playGame }) {
               isBonusMode={isBonusMode}
               playGame={playGame}
               key={button.action}
+              setPlayerButton={setPlayerButton}
             />
           ))}
       </div>

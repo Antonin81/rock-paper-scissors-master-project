@@ -1,10 +1,14 @@
 import { useState } from "react";
 import Header from "../components/Header";
 import GameBoard from "../components/GameBoard";
+import GameDuel from "../components/GameDuel";
 
 function RockPaperScissorsGame({ isBonusMode }) {
   const [resultGame, setResultGame] = useState(null);
+  const [isGamePlaying, setIsGamePlaying] = useState(false);
   const [score, setScore] = useState(0);
+  const [playerButton, setPlayerButton] = useState(null);
+  const [botButton, setBotButton] = useState(null);
 
   const ACTIONS = ["scissors", "paper", "rock", "lizard", "spock"];
 
@@ -16,10 +20,58 @@ function RockPaperScissorsGame({ isBonusMode }) {
     [1, -1, 1, -1, 0],
   ];
 
+  const basicButtons = [
+    {
+      action: "scissors",
+      img: "/img/icon-scissors.svg",
+    },
+    {
+      action: "paper",
+      img: "/img/icon-paper.svg",
+    },
+    {
+      action: "rock",
+      img: "/img/icon-rock.svg",
+    },
+  ];
+
+  const bonusButtons = [
+    {
+      action: "lizard",
+      img: "/img/icon-lizard.svg",
+    },
+    {
+      action: "spock",
+      img: "/img/icon-spock.svg",
+    },
+  ];
+
   function playGame(playerAction) {
+    setIsGamePlaying(true);
     const max = isBonusMode ? 5 : 3;
     const botAction = Math.floor(Math.random() * max);
-    calculateScore(playerAction, botAction);
+    setTimeout(() => {
+      const actionName = ACTIONS[botAction];
+      let button = basicButtons.find(
+        (buttonHere) => buttonHere.action === actionName
+      );
+      if (!button) {
+        button = bonusButtons.find(
+          (buttonHere) => buttonHere.action === actionName
+        );
+      }
+      setBotButton(button);
+    }, 500);
+    setTimeout(() => {
+      calculateScore(playerAction, botAction);
+    }, 1500);
+  }
+
+  function reset() {
+    setResultGame(null);
+    setIsGamePlaying(false);
+    setBotButton(null);
+    setPlayerButton(null);
   }
 
   function calculateScore(playerAction, botAction) {
@@ -29,7 +81,6 @@ function RockPaperScissorsGame({ isBonusMode }) {
   }
 
   function whoWins(playerAction, botAction) {
-    console.log(playerAction, ACTIONS[botAction]);
     const playerActionIndex = ACTIONS.indexOf(playerAction);
     return RESULTS[playerActionIndex][botAction];
   }
@@ -38,7 +89,23 @@ function RockPaperScissorsGame({ isBonusMode }) {
     <>
       <Header isBonusMode={isBonusMode} score={score} />
       <main>
-        <GameBoard isBonusMode={isBonusMode} playGame={playGame} />
+        {!isGamePlaying && (
+          <GameBoard
+            isBonusMode={isBonusMode}
+            playGame={playGame}
+            setPlayerButton={setPlayerButton}
+            basicButtons={basicButtons}
+            bonusButtons={bonusButtons}
+          />
+        )}
+        {isGamePlaying && (
+          <GameDuel
+            playerButton={playerButton}
+            botButton={botButton}
+            resultGame={resultGame}
+            reset={reset}
+          />
+        )}
       </main>
     </>
   );

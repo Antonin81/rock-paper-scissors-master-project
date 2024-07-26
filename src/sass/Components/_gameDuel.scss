@@ -1,0 +1,78 @@
+.game-duel {
+  display: flex;
+  justify-content: center;
+  margin-top: 5dvh;
+  height: 30dvh;
+  gap: 50px;
+  margin-inline: auto;
+  max-width: 1000px;
+  > div {
+    width: 50%;
+  }
+  p {
+    letter-spacing: 0.1rem;
+    font-size: 1.25rem;
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  .duel-action-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 100%;
+    &::before {
+      content: "";
+      width: 80%;
+      max-width: 240px;
+      aspect-ratio: 1/1;
+      border-radius: 100rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: hsla(229, 25%, 31%, 0.1);
+      z-index: -1;
+    }
+    &.winner {
+      .action-button {
+        position: relative;
+        &::before {
+          animation: winnerShadow 0.5s ease-out forwards;
+        }
+      }
+    }
+  }
+  .action-button {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+  }
+  .duel-result-container {
+    padding-top: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    p {
+      font-weight: 700;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    button {
+      background-color: white;
+      border: none;
+      width: 75%;
+      padding-block: 15px;
+      border-radius: 0.75rem;
+      cursor: pointer;
+      span {
+        color: hsl(229, 25%, 31%);
+        font-size: 0.8rem;
+        letter-spacing: 0.1rem;
+        font-weight: 700;
+        margin: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+@keyframes winnerShadow {
+  0% {
+    box-shadow: 0;
+  }
+  100% {
+    box-shadow: $winnerShadow;
+  }
+}

@@ -1,5 +1,9 @@
 @import "./Utils/fonts";
+@import "./Utils/variables";
+@import "./Utils/mixins";
+@import "./Utils/animations";
 @import "./Base/base";
 @import "./Layout/header";
 @import "./Components/actionButton";
 @import "./Components/gameBoard";
+@import "./Components/gameDuel";
