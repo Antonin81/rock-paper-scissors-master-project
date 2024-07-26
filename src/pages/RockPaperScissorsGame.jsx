@@ -1,11 +1,19 @@
 import { useState } from "react";
 import Header from "../components/Header";
+import GameBoard from "../components/GameBoard";
 
-function RockPaperScissorsGame({ gameMode }) {
+function RockPaperScissorsGame({ isBonusMode }) {
   const [score, setScore] = useState(0);
   return (
     <>
-      <Header gameMode={gameMode} score={score} />
+      <Header isBonusMode={isBonusMode} score={score} />
+      <main>
+        <GameBoard
+          isBonusMode={isBonusMode}
+          score={score}
+          setScore={setScore}
+        />
+      </main>
     </>
   );
 }

@@ -1,14 +1,17 @@
-function Header({ gameMode, score }) {
+function Header({ isBonusMode, score }) {
   const basicGame = ["rock", "paper", "scissors"];
-  const bonusGame = ["rock", "paper", "scissors", "lizard", "spock"];
+  const bonusGame = ["lizard", "spock"];
 
   return (
     <header>
       <div>
         <ul>
-          {gameMode === "basic" &&
-            basicGame.map((label) => <li key={label}>{label}</li>)}
-          {gameMode === "bonus" &&
+          {basicGame.map((label) => (
+            <li key={label} className={isBonusMode ? "full-actions-list" : ""}>
+              {label}
+            </li>
+          ))}
+          {isBonusMode &&
             bonusGame.map((label) => (
               <li key={label} className="full-actions-list">
                 {label}

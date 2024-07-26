@@ -1,0 +1,55 @@
+.gameboard {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15dvh;
+  > img {
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+  }
+  > div {
+    height: 30dvh;
+    aspect-ratio: 1.2/1;
+    position: relative;
+    button {
+      position: absolute;
+      transform: translate(-50%, -50%);
+    }
+  }
+  .scissors-button {
+    top: 0;
+    left: 0;
+  }
+  .paper-button {
+    left: 100%;
+    top: 0;
+  }
+  .rock-button {
+    top: 100%;
+    left: 50%;
+  }
+  &.bonus-gameboard {
+    .scissors-button {
+      top: 0;
+      left: 50%;
+    }
+    .paper-button {
+      left: 100%;
+      top: 38%;
+    }
+    .rock-button {
+      top: 100%;
+      left: 78%;
+    }
+    .lizard-button {
+      top: 100%;
+      left: 22%;
+    }
+    .spock-button {
+      top: 38%;
+      left: 0%;
+    }
+  }
+}

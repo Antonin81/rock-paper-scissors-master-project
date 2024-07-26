@@ -63,4 +63,106 @@ header > div > div .score-text {
   line-height: 0.9;
 }
 
+.action-button {
+  height: 150px;
+  aspect-ratio: 1/1;
+  border: none;
+  border-radius: 100rem;
+  padding: 0;
+  display: inline-block;
+  cursor: pointer;
+}
+.action-button.scissors-button {
+  background-image: linear-gradient(to top, hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+  box-shadow: 0 5px 0 0 hsl(32, 80%, 35%);
+}
+.action-button.paper-button {
+  background-image: linear-gradient(to top, hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+  box-shadow: 0 5px 0 0 hsl(230, 70%, 50%);
+}
+.action-button.rock-button {
+  background-image: linear-gradient(to top, hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+  box-shadow: 0 5px 0 0 hsl(349, 71%, 35%);
+}
+.action-button.lizard-button {
+  background-image: linear-gradient(to top, hsl(261, 73%, 60%), hsl(261, 72%, 63%));
+  box-shadow: 0 5px 0 0 hsl(261, 73%, 50%);
+}
+.action-button.spock-button {
+  background-image: linear-gradient(to top, hsl(189, 59%, 53%), hsl(189, 58%, 57%));
+  box-shadow: 0 5px 0 0 hsl(189, 59%, 40%);
+}
+.action-button.small {
+  height: 130px;
+}
+.action-button img {
+  height: 50%;
+}
+.action-button span {
+  background-color: white;
+  height: 80%;
+  display: block;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100rem;
+  box-shadow: inset 0 5px 0 0 hsl(0, 0%, 85%);
+  margin: 10%;
+}
+
+.gameboard {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15dvh;
+}
+.gameboard > img {
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+}
+.gameboard > div {
+  height: 30dvh;
+  aspect-ratio: 1.2/1;
+  position: relative;
+}
+.gameboard > div button {
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+.gameboard .scissors-button {
+  top: 0;
+  left: 0;
+}
+.gameboard .paper-button {
+  left: 100%;
+  top: 0;
+}
+.gameboard .rock-button {
+  top: 100%;
+  left: 50%;
+}
+.gameboard.bonus-gameboard .scissors-button {
+  top: 0;
+  left: 50%;
+}
+.gameboard.bonus-gameboard .paper-button {
+  left: 100%;
+  top: 38%;
+}
+.gameboard.bonus-gameboard .rock-button {
+  top: 100%;
+  left: 78%;
+}
+.gameboard.bonus-gameboard .lizard-button {
+  top: 100%;
+  left: 22%;
+}
+.gameboard.bonus-gameboard .spock-button {
+  top: 38%;
+  left: 0%;
+}
+
 /*# sourceMappingURL=main.css.map */
