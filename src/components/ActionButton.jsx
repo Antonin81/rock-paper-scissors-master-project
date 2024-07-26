@@ -1,4 +1,4 @@
-function ActionButton({ isBonusMode, button }) {
+function ActionButton({ isBonusMode, button, playGame }) {
   return (
     <button
       className={
@@ -8,6 +8,9 @@ function ActionButton({ isBonusMode, button }) {
         (isBonusMode ? " small" : "")
       }
       aria-label={button.action}
+      onClick={(e) => {
+        playGame(button.action);
+      }}
     >
       <span>
         <img aria-hidden="true" src={button.img} alt="" />

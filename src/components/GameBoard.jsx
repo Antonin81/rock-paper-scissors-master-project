@@ -1,6 +1,6 @@
 import ActionButton from "./ActionButton";
 
-function GameBoard({ isBonusMode, score, setScore }) {
+function GameBoard({ isBonusMode, playGame }) {
   const basicButtons = [
     {
       action: "scissors",
@@ -36,11 +36,21 @@ function GameBoard({ isBonusMode, score, setScore }) {
       />
       <div>
         {basicButtons.map((button) => (
-          <ActionButton button={button} isBonusMode={isBonusMode} />
+          <ActionButton
+            button={button}
+            isBonusMode={isBonusMode}
+            playGame={playGame}
+            key={button.action}
+          />
         ))}
         {isBonusMode &&
           bonusButtons.map((button) => (
-            <ActionButton button={button} isBonusMode={isBonusMode} />
+            <ActionButton
+              button={button}
+              isBonusMode={isBonusMode}
+              playGame={playGame}
+              key={button.action}
+            />
           ))}
       </div>
     </div>
