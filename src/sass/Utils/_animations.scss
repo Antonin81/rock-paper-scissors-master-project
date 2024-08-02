@@ -6,3 +6,12 @@
     box-shadow: $winnerShadow;
   }
 }
+
+@keyframes winnerShadowMobile {
+  0% {
+    box-shadow: 0;
+  }
+  100% {
+    box-shadow: $winnerShadowMobile;
+  }
+}

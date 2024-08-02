@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "../components/Header";
 import GameBoard from "../components/GameBoard";
 import GameDuel from "../components/GameDuel";
+import RulesModal from "../components/RulesModal";
 
 function RockPaperScissorsGame({ isBonusMode }) {
   const [resultGame, setResultGame] = useState(null);
@@ -9,6 +10,7 @@ function RockPaperScissorsGame({ isBonusMode }) {
   const [score, setScore] = useState(0);
   const [playerButton, setPlayerButton] = useState(null);
   const [botButton, setBotButton] = useState(null);
+  const [areRulesOpen, setAreRulesOpen] = useState(false);
 
   const ACTIONS = ["scissors", "paper", "rock", "lizard", "spock"];
 
@@ -61,10 +63,10 @@ function RockPaperScissorsGame({ isBonusMode }) {
         );
       }
       setBotButton(button);
-    }, 500);
+    }, 250);
     setTimeout(() => {
       calculateScore(playerAction, botAction);
-    }, 1500);
+    }, 250);
   }
 
   function reset() {
@@ -106,7 +108,20 @@ function RockPaperScissorsGame({ isBonusMode }) {
             reset={reset}
           />
         )}
+        <button
+          onClick={(e) => {
+            setAreRulesOpen(true);
+          }}
+          className="rules-button"
+        >
+          RULES
+        </button>
       </main>
+      <RulesModal
+        areRulesOpen={areRulesOpen}
+        setAreRulesOpen={setAreRulesOpen}
+        isBonusMode={isBonusMode}
+      />
     </>
   );
 }

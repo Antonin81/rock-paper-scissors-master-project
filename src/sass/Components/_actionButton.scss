@@ -5,6 +5,13 @@
   border-radius: 100rem;
   padding: 0;
   display: inline-block;
+  filter: drop-shadow(0 3px 2px rgba(0, 0, 0, 0.6));
+  @media screen and (width<500px) {
+    height: 120px;
+  }
+  @media screen and (width<450px) {
+    height: 100px;
+  }
   &:not(:disabled) {
     cursor: pointer;
   }
@@ -61,6 +68,12 @@
   }
   &.small {
     height: 130px;
+    @media screen and (width<500px) {
+      height: 95px;
+    }
+    @media screen and (width<450px) {
+      height: 70px;
+    }
   }
   img {
     height: 50%;

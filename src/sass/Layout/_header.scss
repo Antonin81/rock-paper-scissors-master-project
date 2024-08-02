@@ -2,6 +2,9 @@ header {
   width: 500px;
   margin-inline: auto;
   padding-top: 40px;
+  @media screen and (width<600px) {
+    width: 100%;
+  }
   > div {
     display: flex;
     padding: 15px;
@@ -18,8 +21,14 @@ header {
         font-weight: 700;
         font-size: 1.7rem;
         line-height: 0.8;
+        @media screen and (width<600px) {
+          font-size: 1.3rem;
+        }
         &.full-actions-list {
           font-size: 1.3rem;
+          @media screen and (width<600px) {
+            font-size: 1rem;
+          }
         }
       }
     }
@@ -28,6 +37,9 @@ header {
       padding: 15px 40px;
       text-align: center;
       border-radius: 5px;
+      @media screen and (width<600px) {
+        padding: 10px 25px;
+      }
       .score-title {
         color: hsl(229, 64%, 46%);
         font-size: 0.7rem;

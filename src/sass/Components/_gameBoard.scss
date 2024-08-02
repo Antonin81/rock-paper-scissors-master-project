@@ -4,6 +4,12 @@
   align-items: center;
   justify-content: center;
   margin-top: 15dvh;
+  @media screen and (width<500px) {
+    margin-top: 20dvh;
+  }
+  @media screen and (width<450px) {
+    margin-top: 22.5dvh;
+  }
   > img {
     position: absolute;
     z-index: -1;
@@ -13,6 +19,12 @@
     height: 30dvh;
     aspect-ratio: 1.2/1;
     position: relative;
+    @media screen and (width<500px) {
+      height: 20dvh;
+    }
+    @media screen and (width<450px) {
+      height: 15dvh;
+    }
     button {
       position: absolute;
       transform: translate(-50%, -50%);
