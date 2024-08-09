@@ -9,7 +9,7 @@ function Home() {
 
   return (
     <main className="home-main">
-      <img src="/img/logo.svg" alt="Rock paper scissors logo" />
+      <img src="./img/logo.svg" alt="Rock paper scissors logo" />
       <div>
         <button
           onClick={(e) => {

@@ -11,11 +11,7 @@ function GameBoard({
     <div className={"gameboard" + (isBonusMode ? " bonus-gameboard" : "")}>
       <img
         aria-hidden="true"
-        src={
-          isBonusMode
-            ? "../../public/img/bg-pentagon.svg"
-            : "../../public/img/bg-triangle.svg"
-        }
+        src={isBonusMode ? "./img/bg-pentagon.svg" : "./img/bg-triangle.svg"}
         alt=""
       />
       <div>

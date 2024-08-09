@@ -25,26 +25,26 @@ function RockPaperScissorsGame({ isBonusMode }) {
   const basicButtons = [
     {
       action: "scissors",
-      img: "/img/icon-scissors.svg",
+      img: "./img/icon-scissors.svg",
     },
     {
       action: "paper",
-      img: "/img/icon-paper.svg",
+      img: "./img/icon-paper.svg",
     },
     {
       action: "rock",
-      img: "/img/icon-rock.svg",
+      img: "./img/icon-rock.svg",
     },
   ];
 
   const bonusButtons = [
     {
       action: "lizard",
-      img: "/img/icon-lizard.svg",
+      img: "./img/icon-lizard.svg",
     },
     {
       action: "spock",
-      img: "/img/icon-spock.svg",
+      img: "./img/icon-spock.svg",
     },
   ];
 

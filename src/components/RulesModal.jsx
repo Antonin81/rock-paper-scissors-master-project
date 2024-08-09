@@ -12,14 +12,14 @@ function RulesModal({ areRulesOpen, setAreRulesOpen, isBonusMode }) {
                     setAreRulesOpen(false);
                   }}
                 >
-                  <img src="/img/icon-close.svg" alt="Close the rules" />
+                  <img src="./img/icon-close.svg" alt="Close the rules" />
                 </button>
               </div>
               <img
                 src={
                   isBonusMode
-                    ? "/img/image-rules-bonus.svg"
-                    : "/img/image-rules.svg"
+                    ? "./img/image-rules-bonus.svg"
+                    : "./img/image-rules.svg"
                 }
                 alt={
                   isBonusMode
@@ -32,7 +32,7 @@ function RulesModal({ areRulesOpen, setAreRulesOpen, isBonusMode }) {
                   setAreRulesOpen(false);
                 }}
               >
-                <img src="/img/icon-close.svg" alt="Close the rules" />
+                <img src="./img/icon-close.svg" alt="Close the rules" />
               </button>
             </div>
           </div>
