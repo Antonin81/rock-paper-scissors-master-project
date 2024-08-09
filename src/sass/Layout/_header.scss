@@ -21,6 +21,7 @@ header {
         font-weight: 700;
         font-size: 1.7rem;
         line-height: 0.8;
+        text-shadow: 0 3px 5px rgba($color: #000000, $alpha: 0.3);
         @media screen and (width<600px) {
           font-size: 1.3rem;
         }

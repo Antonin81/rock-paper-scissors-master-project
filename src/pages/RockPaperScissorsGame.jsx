@@ -113,6 +113,7 @@ function RockPaperScissorsGame({ isBonusMode }) {
             setAreRulesOpen(true);
           }}
           className="rules-button"
+          aria-label="Open the rules"
         >
           RULES
         </button>

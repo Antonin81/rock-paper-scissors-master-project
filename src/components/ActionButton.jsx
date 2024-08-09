@@ -7,7 +7,7 @@ function ActionButton({ isBonusMode, button, playGame, setPlayerButton }) {
         "-button" +
         (isBonusMode ? " small" : "")
       }
-      aria-label={button.action}
+      aria-label={"Play " + button.action}
       onClick={(e) => {
         setPlayerButton(button);
         playGame(button.action);

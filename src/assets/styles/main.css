@@ -62,6 +62,7 @@ header > div > ul li {
   font-weight: 700;
   font-size: 1.7rem;
   line-height: 0.8;
+  text-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
 }
 @media screen and (width < 600px) {
   header > div > ul li {
@@ -126,6 +127,48 @@ main .rules-button {
   }
 }
 
+.home-main {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+}
+.home-main img {
+  width: 500px;
+}
+@media screen and (width < 600px) {
+  .home-main img {
+    width: 80%;
+  }
+}
+.home-main > div {
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (width < 600px) {
+  .home-main > div {
+    width: 100%;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+  }
+}
+.home-main > div button {
+  background-color: transparent;
+  border: solid 1px white;
+  color: white;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 3em;
+  border-radius: 10px;
+  padding: 0.5rem 2rem;
+  letter-spacing: 0.1rem;
+  font-weight: 500;
+  width: 200px;
+  cursor: pointer;
+}
 .action-button {
   height: 150px;
   aspect-ratio: 1/1;
@@ -237,12 +280,15 @@ main .rules-button {
 }
 @media screen and (width < 500px) {
   .gameboard > div {
-    height: 20dvh;
+    height: auto;
+    width: 100%;
+    max-width: 40dvw;
   }
 }
 @media screen and (width < 450px) {
   .gameboard > div {
-    height: 15dvh;
+    width: 100%;
+    max-width: 50dvw;
   }
 }
 .gameboard > div button {
