@@ -32,7 +32,11 @@ function GameDuel({ playerButton, botButton, resultGame, reset }) {
                 "duel-action-container" + (resultGame == -1 ? " winner" : "")
               }
             >
-              {botButton && <ActionButton button={botButton} />}
+              {botButton ? (
+                <ActionButton button={botButton} />
+              ) : (
+                <div className="empty-action-button"></div>
+              )}
             </div>
           </div>
         </div>

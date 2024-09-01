@@ -456,6 +456,11 @@ main .rules-button {
   height: auto;
   max-width: 300px;
 }
+.game-duel-container .game-duel .empty-action-button {
+  width: 100%;
+  aspect-ratio: 1/1;
+  max-width: 300px;
+}
 
 .rules-modal-background {
   background-color: rgba(0, 0, 0, 0.4);
