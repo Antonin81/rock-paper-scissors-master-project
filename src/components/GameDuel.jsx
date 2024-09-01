@@ -1,6 +1,12 @@
 import ActionButton from "./ActionButton";
 
-function GameDuel({ playerButton, botButton, resultGame, reset }) {
+function GameDuel({
+  playerButton,
+  botButton,
+  resultGame,
+  reset,
+  areRulesOpen,
+}) {
   return (
     <div className="game-duel-container">
       <div>
@@ -20,7 +26,7 @@ function GameDuel({ playerButton, botButton, resultGame, reset }) {
               {resultGame == -1 && <p>YOU LOSE</p>}
               {resultGame == 0 && <p>EQUALITY</p>}
               {resultGame == 1 && <p>YOU WIN</p>}
-              <button onClick={reset}>
+              <button onClick={reset} tabIndex={areRulesOpen ? -1 : 0}>
                 <span>PLAY AGAIN</span>
               </button>
             </div>

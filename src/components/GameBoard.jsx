@@ -6,6 +6,7 @@ function GameBoard({
   setPlayerButton,
   basicButtons,
   bonusButtons,
+  areRulesOpen,
 }) {
   return (
     <div className={"gameboard" + (isBonusMode ? " bonus-gameboard" : "")}>
@@ -22,6 +23,7 @@ function GameBoard({
             playGame={playGame}
             key={button.action}
             setPlayerButton={setPlayerButton}
+            areRulesOpen={areRulesOpen}
           />
         ))}
         {isBonusMode &&
@@ -32,6 +34,7 @@ function GameBoard({
               playGame={playGame}
               key={button.action}
               setPlayerButton={setPlayerButton}
+              areRulesOpen={areRulesOpen}
             />
           ))}
       </div>

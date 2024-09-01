@@ -98,6 +98,7 @@ function RockPaperScissorsGame({ isBonusMode }) {
             setPlayerButton={setPlayerButton}
             basicButtons={basicButtons}
             bonusButtons={bonusButtons}
+            areRulesOpen={areRulesOpen}
           />
         )}
         {isGamePlaying && (
@@ -106,6 +107,7 @@ function RockPaperScissorsGame({ isBonusMode }) {
             botButton={botButton}
             resultGame={resultGame}
             reset={reset}
+            areRulesOpen={areRulesOpen}
           />
         )}
         <button
@@ -114,6 +116,7 @@ function RockPaperScissorsGame({ isBonusMode }) {
           }}
           className="rules-button"
           aria-label="Open the rules"
+          tabIndex={areRulesOpen ? -1 : 0}
         >
           RULES
         </button>

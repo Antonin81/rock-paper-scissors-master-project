@@ -1,4 +1,10 @@
-function ActionButton({ isBonusMode, button, playGame, setPlayerButton }) {
+function ActionButton({
+  isBonusMode,
+  button,
+  playGame,
+  setPlayerButton,
+  areRulesOpen,
+}) {
   return playGame ? (
     <button
       className={
@@ -12,6 +18,7 @@ function ActionButton({ isBonusMode, button, playGame, setPlayerButton }) {
         setPlayerButton(button);
         playGame(button.action);
       }}
+      tabIndex={areRulesOpen ? -1 : 0}
     >
       <span>
         <img aria-hidden="true" src={button.img} alt="" />
