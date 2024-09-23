@@ -13,7 +13,7 @@ import Home from "./pages/Home";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Router>
+    <Router basename="/rock-paper-scissors-master-project">
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route
